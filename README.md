@@ -32,12 +32,23 @@ There are different types of Censorship done in Survival Analysis as explained b
 
 **Right Censoring**: This happens when the subject enters at t=0 i.e at the start of the study and terminates before the event of interest occurs. This can be either not experiencing the event of interest during the study, i.e they lived longer than the duration of the study, or could not be a part of the study completely and left early without experiencing the event of interest, i.e they left and we could not study them any longer.
 
-**Left Censoring**: This happens when the birth event wasn’t observed. Another concept known as Length-Biased Sampling should also be mentioned here. This type of sampling occurs when the goal of the study is to perform analysis on the people/subjects who already experienced the event and we wish to see whether they will experience it again. The lifelines package has support for left-censored datasets by adding the keyword left_censoring=True. Note that by default, it is set to False
+**Left Censoring**: This happens when the birth event wasn’t observed. Censoring can also occur if we observe the presence of a state or condition but do not know where it began. For example, consider a study investigating the time to recurrence of a cancer following surgical removal of the primary tumour. If the patients were examined 3 months after surgery to determine recurrence, then those who had a recurrence would have a survival time that was left censored because the actual time of recurrence occurred less than 3 months after surgery.
+Another concept known as Length-Biased Sampling should also be mentioned here. This type of sampling occurs when the goal of the study is to perform analysis on the people/subjects who already experienced the event and we wish to see whether they will experience it again. The lifelines package has support for left-censored datasets by adding the keyword left_censoring=True. Note that by default, it is set to False
 
-**Interval Censoring**: This happens when the follow-up period, i.e time between observation, is not continuous. This can be weekly, monthly, quarterly, etc.
+**Interval Censoring**: This happens when the follow-up period, i.e time between observation, is not continuous. If we consider the previous example and patients are also examined at 6 months, then those who are disease free at 3 months and lost to follow-up between 3 and 6 months are considered interval censored
 
 ![17 07 2022_19 45 04_REC](https://user-images.githubusercontent.com/99672298/179472579-4c62bf3b-461f-4a5f-b538-50e4776ba29c.png)
+
+Survival Analysis was developed to mainly solve the problem of right-censoring, but methods for interval and left censored data are available (Hosmer and Lemeshow, 1999)
 
 **Left Truncation**: It is referred to as late entry. The subjects may have experienced the event of interest before entering the study. There is an argument named ‘entry’ that specifies the duration between birth and entering the study. If we fill in the truncated region then it will make us overconfident about what occurs in the early period after diagnosis. That’s why we truncate them
 
 ![17 07 2022_19 51 53_REC](https://user-images.githubusercontent.com/99672298/179472604-07915399-483e-4aa8-8e88-bec158925ce5.png)
+
+## SURVIVAL AND HAZARD
+Survival data are generally described and modelled in terms of two related probabilities, namely survival and hazard. The survival probability (which is also called the survivor function) S(t) is the probability that an individual survives from the time origin (e.g. diagnosis of cancer) to a specified future time t.\
+The Survival Function is given by,\
+![image](https://user-images.githubusercontent.com/99672298/179503810-a58d9bb2-2b61-4eaf-a3c9-d5f263a6c86e.png)\
+Survival Function defines the probability that the event of interest has not occurred at time t. It can also be interpreted as the probability of survival after time t . Here, T is the random lifetime taken from the population and it cannot be negative.
+
+## Hazard Function
