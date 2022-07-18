@@ -74,3 +74,13 @@ The survival probability at any particular time is calculated as the number of s
 ![image](https://user-images.githubusercontent.com/99672298/179541548-923f61b6-e95f-4df9-8f36-a434e6eb6a17.png)\
 Here, ni represents the number of subjects at risk prior to time t. di represents the number of the event of interest at time t.
 Confidence intervals for the survival probability can also be calculated. The KM survival curve, a plot of the KM survival probability against time, provides a useful summary of the data that can be used to estimate measures such as median survival time. The large skew encountered in the distribution of most survival data is the reason that the mean is not often used.
+
+## NONPARAMETRIC TESTS COMPARING SURVIVAL
+Survival in two or more groups of patients can be compared using a nonparametric test. The logrank test (Peto et al, 1977) is the most widely used method of comparing two or more survival curves. The groups may be treatment arms or prognostic groups (e.g. FIGO stage). The method calculates at each event time, for each group, the number of events one would expect since the previous event if there were no difference between the groups. These values are then summed over all event times to give the total expected number of events in each group, say Ei for group i. The logrank test compares observed number of events, say Oi for treatment group i, to the expected number by calculating the test statistic
+![image](https://user-images.githubusercontent.com/99672298/179567699-d09db01b-52b7-446c-a3c3-546f7f44855c.png)
+This value is compared to a χ2 distribution with (g−1) degrees of freedom, where g is the number of groups. In this manner, a P-value may be computed to calculate the statistical significance of the differences between the complete survival curves.
+
+If the groups are naturally ordered, a more appropriate test is to consider the possibility that there is a trend in survival across them, for example, age groups or stages of cancer. Calculating Oi and Ei for each group on the basis that survival may increase or decrease across the groups results in a more powerful test. For the new Oi and Ei, the test statistic for trend is compared with the χ2 distribution with one degree of freedom (Collett, 1994).
+
+When only two groups are compared, the logrank test is testing the null hypothesis that the ratio of the hazard rates in the two groups is equal to 1. The hazard ratio (HR) is a measure of the relative survival experience in the two groups and may be estimated by
+![image](https://user-images.githubusercontent.com/99672298/179567760-a61f21c7-6ced-45ff-a914-e3025731fa83.png)
