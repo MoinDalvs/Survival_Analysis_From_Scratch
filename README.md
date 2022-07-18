@@ -52,3 +52,25 @@ The Survival Function is given by,\
 Survival Function defines the probability that the event of interest has not occurred at time t. It can also be interpreted as the probability of survival after time t . Here, T is the random lifetime taken from the population and it cannot be negative.
 
 ## Hazard Function
+The Hazard Function also called the intensity function, is defined as the probability that the subject will experience an event of interest within a small time interval, provided that the individual has survived until the beginning of that intervalPut another way, it represents the instantaneous event rate for an individual who has already survived to time tIt can also be considered as the risk of experiencing the event of interest at time t. It is the number of subjects experiencing an event in the interval beginning at time t divided by the product of the number of subjects surviving at time t and interval widthSince the probability of a continuous random variable to equal a particular value is zero. That’s why we consider the probability of the event happening at a particular interval of time from T till (T + ΔT). Since our goal is to find the risk of an event and we don’t want the risk to get bigger as the time interval ΔT gets bigger. Thus, in order to adjust for that, we divide the equation by ΔT. This scales the equation by ΔT. The equation of the Hazard Rate is given as:\
+https://miro.medium.com/max/582/1*2Dia2xF_DVMccQh8saPYFg.png\
+One thing to point out here is that the Hazard is not a probability. This is because, even though we have the probability in the numerator, but the ΔT in the denominator could result in a value which is greater than one.
+
+![17 07 2022_13 00 38_REC](https://user-images.githubusercontent.com/99672298/179527859-39c9a2d4-8f13-4de9-868b-f553500930fe.png)
+![17 07 2022_13 10 55_REC](https://user-images.githubusercontent.com/99672298/179527877-33467681-139e-4795-aff1-d307d1a598cf.png)
+
+## KAPLAN–MEIER SURVIVAL ESTIMATE
+The survival probability can be estimated nonparametrically from observed survival times, both censored and uncensored, using the KM (or product-limit) method (Kaplan and Meier, 1958).Kaplan-Meier Estimate is used to measure the fraction of subjects who survived for a certain amount of survival time t under the same circumstances[2]. It is used to give an average view of the population. This method is also called the product limit. It allows a table called, life table, and a graph, called survival curve, to be produced for a better view of the population at risk. Survival Time is defined as the time starting from a predefined point to the occurrence of the event of interest. The Kaplan-Meier Survival Curve is the probability of surviving in a given length of time where time is considered in small intervals. For survival Analysis using Kaplan-Meier Estimate, there are three assumptions:
+
++ Subjects that are censored have the same survival prospects as those who continue to be followed.
++ Survival probability is the same all the subjects, irrespective of when they are recruited in the study.
+![image](https://user-images.githubusercontent.com/99672298/179541258-992196da-5e59-4d90-bd50-7c2446f75aea.png)\
+More formally,
++ the probability of being alive at time tj, 
++ S(tj), is calculated from S(tj−1) the probability of being alive at tj−1,
++ nj the number of patients alive just before tj,
++ and dj the number of events at tj
+The survival probability at any particular time is calculated as the number of subjects surviving divided by the number of people at risk. The censored subjects are not counted in the denominator. The equation is given as follows:
+![image](https://user-images.githubusercontent.com/99672298/179541548-923f61b6-e95f-4df9-8f36-a434e6eb6a17.png)\
+Here, ni represents the number of subjects at risk prior to time t. di represents the number of the event of interest at time t.
+Confidence intervals for the survival probability can also be calculated. The KM survival curve, a plot of the KM survival probability against time, provides a useful summary of the data that can be used to estimate measures such as median survival time. The large skew encountered in the distribution of most survival data is the reason that the mean is not often used.
