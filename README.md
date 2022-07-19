@@ -109,6 +109,7 @@ Cox Model can handle right-censored data but cannot handle left-censored or inte
 ## Aalen’s Additive Model
 Like the Cox model, this model is also a regression model but unlike the Cox model, it defines the hazard rate as an additive instead of a multiplicative linear model. The hazard is defined as:
 
+![image](https://user-images.githubusercontent.com/99672298/179730180-d45797cb-add2-4312-91b0-5ebda0a511ed.png)
 
 During estimation, the linear regression is computed at each step. The regression can become unstable due to small sample sizes or high colinearity in the dataset.
  
