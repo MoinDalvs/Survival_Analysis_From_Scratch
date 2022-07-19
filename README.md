@@ -65,11 +65,15 @@ The survival probability can be estimated nonparametrically from observed surviv
 + Subjects that are censored have the same survival prospects as those who continue to be followed.
 + Survival probability is the same all the subjects, irrespective of when they are recruited in the study.
 ![image](https://user-images.githubusercontent.com/99672298/179541258-992196da-5e59-4d90-bd50-7c2446f75aea.png)\
-More formally,
-+ the probability of being alive at time tj, 
-+ S(tj), is calculated from S(tj−1) the probability of being alive at tj−1,
-+ nj the number of patients alive just before tj,
-+ and dj the number of events at tj
+Where,
+
++ S(ti−1) = the probability of being alive at ti−1
++ ni = the number of patients alive just before ti
++ di = the number of events at ti
++ t0 = 0, S(0) = 1
+The estimated probability (S(t)) is a step function that changes value only at the time of each event. It’s also possible to compute confidence intervals for the survival probability.
+
+The KM survival curve, a plot of the KM survival probability against time, provides a useful summary of the data that can be used to estimate measures such as median survival time.
 The survival probability at any particular time is calculated as the number of subjects surviving divided by the number of people at risk. The censored subjects are not counted in the denominator. The equation is given as follows:
 ![image](https://user-images.githubusercontent.com/99672298/179541548-923f61b6-e95f-4df9-8f36-a434e6eb6a17.png)\
 Here, ni represents the number of subjects at risk prior to time t. di represents the number of the event of interest at time t.
@@ -84,3 +88,15 @@ If the groups are naturally ordered, a more appropriate test is to consider the 
 
 When only two groups are compared, the logrank test is testing the null hypothesis that the ratio of the hazard rates in the two groups is equal to 1. The hazard ratio (HR) is a measure of the relative survival experience in the two groups and may be estimated by
 ![image](https://user-images.githubusercontent.com/99672298/179567760-a61f21c7-6ced-45ff-a914-e3025731fa83.png)
+An HR of 1 indicates no difference in survival. In practice, it is better to estimate HRs using a regression modelling technique, such as Cox regression.
+
+ Nonetheless, the KM method has important limitations. First, it does not provide an effect estimate (i.e., a relative risk) or the related confidence interval to compare the survival in different patient groups in another word,the log-rank test is purely a significance test and cannot provide an estimate of the size of the difference between the groups and its related confidence interval.Second, it does not permit the adjustment of confounders (A confounding variable, also called a confounder or confounding factor, is a third variable in a study examining a potential cause-and-effect relationship. A confounding variable is related to both the supposed cause and the supposed effect of the study) in in etiological research or predictors in prognostic research (Prognostic research provides information essential for understanding and predicting future clinical outcomes in people with/in a specific health state)
+
+ Finally, the KM method requires data categorization, so calculation of the incremental increase (or decrease) in the relative risk of a given event associated with one unit (or any number of units) increase in the candidate risk factor is not possible . 
+ These limitations can be approached by Cox regression analysis, in which the dependent variable is the incidence variable are risk factors or predictors that the investigators use to explain the or predict the study endpoint.
+  Cox regression is used in survival time analysis to determine the influence of different variables on survival time, variables such as age, clinical history, exposure to certain factors and time.
+  Cox regression is also kwnon as Cox proportional hazards model.
+  In Survival Analysis, after a disease has been detected we are not only interested in the survival time but also want to know whether survival time depends on one or more factors called predictors.
+  For some situations with a single factor wiht only two values Log Rank test is used for example to test the difference between the survival time when two different types of drugs are given.
+  
+ 
