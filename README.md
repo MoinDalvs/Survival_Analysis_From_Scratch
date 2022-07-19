@@ -61,6 +61,7 @@ One thing to point out here is that the Hazard is not a probability. This is bec
 
 ## KAPLAN–MEIER SURVIVAL ESTIMATE
 The survival probability can be estimated nonparametrically from observed survival times, both censored and uncensored, using the KM (or product-limit) method (Kaplan and Meier, 1958).Kaplan-Meier Estimate is used to measure the fraction of subjects who survived for a certain amount of survival time t under the same circumstances[2]. It is used to give an average view of the population. This method is also called the product limit. It allows a table called, life table, and a graph, called survival curve, to be produced for a better view of the population at risk. Survival Time is defined as the time starting from a predefined point to the occurrence of the event of interest. The Kaplan-Meier Survival Curve is the probability of surviving in a given length of time where time is considered in small intervals. For survival Analysis using Kaplan-Meier Estimate, there are three assumptions:
+![17 07 2022_20 16 04_REC](https://user-images.githubusercontent.com/99672298/179729377-4836291e-43c5-4bce-9e15-12f50c2500fe.png)
 
 + Subjects that are censored have the same survival prospects as those who continue to be followed.
 + Survival probability is the same all the subjects, irrespective of when they are recruited in the study.
@@ -78,6 +79,7 @@ The survival probability at any particular time is calculated as the number of s
 ![image](https://user-images.githubusercontent.com/99672298/179541548-923f61b6-e95f-4df9-8f36-a434e6eb6a17.png)\
 Here, ni represents the number of subjects at risk prior to time t. di represents the number of the event of interest at time t.
 Confidence intervals for the survival probability can also be calculated. The KM survival curve, a plot of the KM survival probability against time, provides a useful summary of the data that can be used to estimate measures such as median survival time. The large skew encountered in the distribution of most survival data is the reason that the mean is not often used.
+![Screenshot 2022-07-17 134251](https://user-images.githubusercontent.com/99672298/179729429-f83ceac1-a5b2-4bb1-8223-3d83d7105a02.png)
 
 ## NONPARAMETRIC TESTS COMPARING SURVIVAL
 Survival in two or more groups of patients can be compared using a nonparametric test. The logrank test (Peto et al, 1977) is the most widely used method of comparing two or more survival curves. The groups may be treatment arms or prognostic groups (e.g. FIGO stage). The method calculates at each event time, for each group, the number of events one would expect since the previous event if there were no difference between the groups. These values are then summed over all event times to give the total expected number of events in each group, say Ei for group i. The logrank test compares observed number of events, say Oi for treatment group i, to the expected number by calculating the test statistic
@@ -90,13 +92,24 @@ When only two groups are compared, the logrank test is testing the null hypothes
 ![image](https://user-images.githubusercontent.com/99672298/179567760-a61f21c7-6ced-45ff-a914-e3025731fa83.png)
 An HR of 1 indicates no difference in survival. In practice, it is better to estimate HRs using a regression modelling technique, such as Cox regression.
 
- Nonetheless, the KM method has important limitations. First, it does not provide an effect estimate (i.e., a relative risk) or the related confidence interval to compare the survival in different patient groups in another word,the log-rank test is purely a significance test and cannot provide an estimate of the size of the difference between the groups and its related confidence interval.Second, it does not permit the adjustment of confounders (A confounding variable, also called a confounder or confounding factor, is a third variable in a study examining a potential cause-and-effect relationship. A confounding variable is related to both the supposed cause and the supposed effect of the study) in in etiological research or predictors in prognostic research (Prognostic research provides information essential for understanding and predicting future clinical outcomes in people with/in a specific health state)
+ Nonetheless, the KM method has important limitations. First, it does not provide an effect estimate (i.e., a relative risk) or the related confidence interval to compare the survival in different patient groups in another word,the log-rank test is purely a significance test and cannot provide an estimate of the size of the difference between the groups and its related confidence interval.Second, it does not permit the adjustment of confounders (A confounding variable, also called a confounder or confounding factor, is a third variable in a study examining a potential cause-and-effect relationship. A confounding variable is related to both the supposed cause and the supposed effect of the study) in in etiological research or predictors in prognostic research (Prognostic research provides information essential for understanding and predicting future clinical outcomes in people with/in a specific health state).\
 
- Finally, the KM method requires data categorization, so calculation of the incremental increase (or decrease) in the relative risk of a given event associated with one unit (or any number of units) increase in the candidate risk factor is not possible . 
- These limitations can be approached by Cox regression analysis, in which the dependent variable is the incidence variable are risk factors or predictors that the investigators use to explain the or predict the study endpoint.
-  Cox regression is used in survival time analysis to determine the influence of different variables on survival time, variables such as age, clinical history, exposure to certain factors and time.
-  Cox regression is also kwnon as Cox proportional hazards model.
-  In Survival Analysis, after a disease has been detected we are not only interested in the survival time but also want to know whether survival time depends on one or more factors called predictors.
-  For some situations with a single factor wiht only two values Log Rank test is used for example to test the difference between the survival time when two different types of drugs are given.
-  
+ Finally, the KM method requires data categorization, so calculation of the incremental increase (or decrease) in the relative risk of a given event associated with one unit (or any number of units) increase in the candidate risk factor is not possible.\
+ These limitations can be approached by Cox regression analysis, in which the dependent variable is the incidence variable are risk factors or predictors that the investigators use to explain the or predict the study endpoint.\
+  Cox regression is used in survival time analysis to determine the influence of different variables on survival time, variables such as age, clinical history, exposure to certain factors and time.\
+  Cox regression is also kwnon as Cox proportional hazards model.\
+  In Survival Analysis, after a disease has been detected we are not only interested in the survival time but also want to know whether survival time depends on one or more factors called predictors.\
+  For some situations with a single factor wiht only two values Log Rank test is used for example to test the difference between the survival time when two different types of drugs are given.\
+  The Cox Proportional Hazards Regression Analysis Model was introduced by Cox and it takes into account the effect of several variables at a time and examines the relationship of the survival distribution to these variables. It is similar to Multiple Regression Analysis, but the difference is that the depended variable is the Hazard Function at a given time t. It is based on very small intervals of time, called time-clicks, which contains at most one event of interest. It is a semi-parametric approach for the estimation of weights in a Proportional Hazard Model.\
+  The formula for the Cox Proportional Hazards Regression Model is given as follows. The model works such that the log-hazard of an individual subject is a linear function of their static covariates and a population-level baseline hazard function that changes over time.\
+  ![image](https://user-images.githubusercontent.com/99672298/179714514-2f1cf4f1-134b-42fa-a6dd-3bf167d7c68a.png)
+  β0(t) is the baseline hazard function and it is defined as the probability of experiencing the event of interest when all other covariates equal zero. And It is the only time-dependent component in the model. The model makes no assumption about the baseline hazard function and assumes a parametric form for the effect of the covariates on the hazard.\
+  The sign of the regression coefficients, βi, plays a role in the hazard of a subject. A change in these regression coefficients or covariates will either increase or decrease the baseline hazard. A positive sign for βi means that the risk of an event is higher, and thus the prognosis for the event of interest for that particular subject is higher. Similarly, a negative sign means that the risk of the event is lower.\
+Cox Model can handle right-censored data but cannot handle left-censored or interval-censored data directly\
+## Aalen’s Additive Model
+Like the Cox model, this model is also a regression model but unlike the Cox model, it defines the hazard rate as an additive instead of a multiplicative linear model. The hazard is defined as:
+
+
+During estimation, the linear regression is computed at each step. The regression can become unstable due to small sample sizes or high colinearity in the dataset.
  
+Thank You For Reading!
