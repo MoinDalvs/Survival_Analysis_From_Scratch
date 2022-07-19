@@ -60,7 +60,7 @@ One thing to point out here is that the Hazard is not a probability. This is bec
 ![17 07 2022_13 10 55_REC](https://user-images.githubusercontent.com/99672298/179527877-33467681-139e-4795-aff1-d307d1a598cf.png)
 
 ## KAPLAN–MEIER SURVIVAL ESTIMATE
-The survival probability can be estimated nonparametrically from observed survival times, both censored and uncensored, using the KM (or product-limit) method (Kaplan and Meier, 1958).Kaplan-Meier Estimate is used to measure the fraction of subjects who survived for a certain amount of survival time t under the same circumstances[2]. It is used to give an average view of the population. This method is also called the product limit. It allows a table called, life table, and a graph, called survival curve, to be produced for a better view of the population at risk. Survival Time is defined as the time starting from a predefined point to the occurrence of the event of interest. The Kaplan-Meier Survival Curve is the probability of surviving in a given length of time where time is considered in small intervals. For survival Analysis using Kaplan-Meier Estimate, there are three assumptions:
+The survival probability can be estimated nonparametrically from observed survival times, both censored and uncensored, using the KM (or product-limit) method (Kaplan and Meier, 1958).Kaplan-Meier Estimate is used to measure the fraction of subjects who survived for a certain amount of survival time t under the same circumstances. It is used to give an average view of the population. This method is also called the product limit. It allows a table called, life table, and a graph, called survival curve, to be produced for a better view of the population at risk. Survival Time is defined as the time starting from a predefined point to the occurrence of the event of interest. The Kaplan-Meier Survival Curve is the probability of surviving in a given length of time where time is considered in small intervals. For survival Analysis using Kaplan-Meier Estimate, there are three assumptions:
 ![17 07 2022_20 16 04_REC](https://user-images.githubusercontent.com/99672298/179729377-4836291e-43c5-4bce-9e15-12f50c2500fe.png)
 
 + Subjects that are censored have the same survival prospects as those who continue to be followed.
@@ -107,9 +107,9 @@ An HR of 1 indicates no difference in survival. In practice, it is better to est
   The sign of the regression coefficients, βi, plays a role in the hazard of a subject. A change in these regression coefficients or covariates will either increase or decrease the baseline hazard. A positive sign for βi means that the risk of an event is higher, and thus the prognosis for the event of interest for that particular subject is higher. Similarly, a negative sign means that the risk of the event is lower.\
 Cox Model can handle right-censored data but cannot handle left-censored or interval-censored data directly\
 ## Aalen’s Additive Model
-Like the Cox model, this model is also a regression model but unlike the Cox model, it defines the hazard rate as an additive instead of a multiplicative linear model. The hazard is defined as:\
+Like the Cox model, this model is also a regression model but unlike the Cox model, it defines the hazard rate as an additive instead of a multiplicative linear model. The hazard is defined as:
 
-![image](https://user-images.githubusercontent.com/99672298/179730180-d45797cb-add2-4312-91b0-5ebda0a511ed.png)\
+![image](https://user-images.githubusercontent.com/99672298/179730180-d45797cb-add2-4312-91b0-5ebda0a511ed.png)
 
 During estimation, the linear regression is computed at each step. The regression can become unstable due to small sample sizes or high colinearity in the dataset.
 This is a parametric model, which means that it has a functional form with parameters that we are fitting the data to. Parametric models allow us to extend the survival function, hazard function, or the cumulative hazard function past our maximum observed duration. This concept is called Extrapolation
