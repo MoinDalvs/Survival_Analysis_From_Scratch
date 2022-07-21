@@ -1,7 +1,7 @@
 # Survival_Analysis_From_Scratch
 An introduction to the concepts of Survival Analysis and its implementation in lifelines package for Python.
 
-Survival Analysis is used to estimate the lifespan of a particular population under study. It is also called ‘Time to Event’ Analysis as the goal is to estimate the time for an individual or a group of individuals to experience an event of interest.In many medical studies, time to death is the event of interest. However, in cancer, another important measure is the time between response to treatment and recurrence or relapse-free survival time (also called disease-free survival time). Survival Analysis was originally developed and used by Medical Researchers and Data Analysts to measure the lifetimes of a certain population[1]. But, over the years, it has been used in various other applications such as:
+Survival Analysis is used to estimate the lifespan of a particular population under study. It is also called ‘Time to Event’ Analysis as the goal is to estimate the time for an individual or a group of individuals to experience an event of interest.In many medical studies, time to death is the event of interest. However, in cancer, another important measure is the time between response to treatment and recurrence or relapse-free survival time (also called disease-free survival time). Survival Analysis was originally developed and used by Medical Researchers and Data Analysts to measure the lifetimes of a certain population. But, over the years, it has been used in various other applications such as:
 + Predicting churning customers/employees
 + Cancer studies for patients survival time analyses,
 + Sociology for “event-history analysis”,
